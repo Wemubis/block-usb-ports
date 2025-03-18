@@ -7,8 +7,8 @@ It also provides an optional **systemd service** to **persist the changes after 
 
 ---
 
-## **Installation & Usage**
-1 **Install & Remove the service (for persistence)**  
+## **Installation & usage**
+1 **Install & remove the service (for persistence)**  
 ```bash
 sudo bash usb.sh install
 ```
@@ -17,14 +17,14 @@ sudo bash usb.sh install
 sudo bash usb.sh remove
 ```
 
-2 **Usage** (Blocks external/removable devices)  
+2 **Usage** 
 ```bash
 sudo bash usb.sh {install|remove|enable|disable|status}
 ```
 
 ---
 
-## **Add Aliases for Quick Access**
+## **Add aliases for quick access**
 To make the commands easier, add the following aliases to your `~/.bashrc` or `~/.zshrc`:
 ```bash
 alias usb-on='sudo bash <PathToFile>/usb.sh enable'
@@ -46,7 +46,7 @@ usb-status # Check if USB is blocked
 
 ---
 
-## **❗ Important Notes**
+## **❗ Important notes**
 - The script requires root privileges or sudo permissions and **blocks only removable USB devices** (`ATTR{removable}=="1"`).
 - If some devices are still working, modify the rules manually in `/etc/udev/rules.d/99-usb-block.rules`.
 - If Bluetooth gets blocked, check with `lsusb -t` and adjust the rule to **whitelist** its bus ID.
