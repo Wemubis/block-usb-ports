@@ -49,4 +49,3 @@ usb-status # Check if USB is blocked
 ## **❗ Important notes**
 - The script requires root privileges or sudo permissions and **blocks only removable USB devices** (`ATTR{removable}=="1"`).
 - If some devices are still working, modify the rules manually in `/etc/udev/rules.d/99-usb-block.rules`.
-- If Bluetooth gets blocked, check with `lsusb -t` and adjust the rule to **whitelist** its bus ID.
