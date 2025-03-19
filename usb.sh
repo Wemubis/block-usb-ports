@@ -17,6 +17,7 @@ enable_usb () {
 }
 
 create_service () {
+    echo "Creating usb-control.service"
     sudo bash -c "cat > $SERVICE_FILE" <<EOF
 [Unit]
 Description=USB Control Service
@@ -38,6 +39,7 @@ EOF
 }
 
 remove_service () {
+    echo "Deleting usb-control.service"
     sudo systemctl stop usb-control.service
     sudo systemctl disable usb-control.service
     sudo rm -f $SERVICE_FILE
@@ -47,9 +49,9 @@ remove_service () {
 
 status_usb () {
     if [ -f "$USB_RULES_FILE" ]; then
-        echo "As of now USB ports are **disabled**"
+        echo "As of now USB ports are DISABLED"
     else
-        echo "As of now USB ports are **enabled**"
+        echo "As of now USB ports are ENABLED"
     fi
 }
 
